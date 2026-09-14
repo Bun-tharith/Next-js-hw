@@ -16,7 +16,7 @@ import Image from "next/image";
 import { ProductType } from "./ProductCardComponent";
 
 interface ProductImagesProps {
-  image: string
+  images: string[]
 }
 interface ProductInfoProps {
   info?: Array<{
@@ -35,7 +35,7 @@ const ProductDetail = ({ productDetailInterface }:ProductDetailIntefaces )=> {
       <div className="container">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
-            <ProductImages image={PRODUCT_DETAILS.images[0]} />
+            <ProductImages images={PRODUCT_DETAILS.images} />
           </div>
           <div className="space-y-6">
             <div className="space-y-4">
@@ -125,7 +125,7 @@ const ProductInfo = ({ info }: ProductInfoProps) => {
   );
 };
 
-const ProductImages = ({ image }: ProductImagesProps) => {
+const ProductImages = ({ images }: ProductImagesProps) => {
   return (
     <Carousel
       opts={{
@@ -138,7 +138,7 @@ const ProductImages = ({ image }: ProductImagesProps) => {
     >
      
         <Image
-        src={image}
+        src={images[0]}
         alt="title"
         width={700}
         height={700}

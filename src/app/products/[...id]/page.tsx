@@ -2,7 +2,7 @@ import { ProductDetail } from "@/components/products/ProductDetailCardComponent"
 import type { ProductType } from "@/components/products/ProductCardComponent";
 
 async function getProduct(id: string): Promise<ProductType> {
-  const response = await fetch(`https://fakestoreapi.com/products/${encodeURIComponent(id)}`, {
+  const response = await fetch(`https://api.escuelajs.co/api/v1/products/${encodeURIComponent(id)}`, {
     cache: "no-store",
   });
 

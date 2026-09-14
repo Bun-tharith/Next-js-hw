@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useState } from "react";
@@ -26,13 +24,13 @@ export interface ProductType {
   id: string | number;
   images: string[];
   title: string;
-  price:number;
+  price: number;
   description: string;
 }
 
 export default function ProductCardComponent({
   images, title, price, description
-}:ProductType) {
+}: ProductType) {
   const [activeSize, setActiveSize] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [inBag, setInBag] = useState(false);
@@ -42,13 +40,19 @@ export default function ProductCardComponent({
 
         {/* ── Image zone ── */}
         <div className="relative overflow-hidden h-80">
-          <Image
-            src={images[0]}
-            className="object-contain drop-shadow-2xl px-8 py-6 transition-transform duration-500 ease-out group-hover/card:scale-105"
-            alt="Nike Air Max Pulse"
-            width={500}
-            height={500}
-          />
+          {images?.[0] ? (
+            <Image
+              src={images[0]}
+              className="object-contain drop-shadow-2xl px-8 py-6 transition-transform duration-500 ease-out group-hover/card:scale-105"
+              alt={title}
+              width={500}
+              height={500}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-sm text-muted-foreground">
+              No image
+            </div>
+          )}
 
           {/* Discount badge — always visible */}
           <span className="absolute top-3 left-3 text-xs tracking-widest font-bold uppercase bg-foreground text-background px-2.5 py-1 rounded-sm select-none">
@@ -148,4 +152,3 @@ export default function ProductCardComponent({
     </div>
   );
 }
-
