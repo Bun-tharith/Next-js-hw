@@ -35,7 +35,7 @@ const ProductDetail = ({ productDetailInterface }:ProductDetailIntefaces )=> {
       <div className="container">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
-            <ProductImages image={PRODUCT_DETAILS.image} />
+            <ProductImages image={PRODUCT_DETAILS.images[0]} />
           </div>
           <div className="space-y-6">
             <div className="space-y-4">

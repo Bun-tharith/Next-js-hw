@@ -24,14 +24,14 @@ const getDeliveryDate = () => {
 
 export interface ProductType {
   id: string | number;
-  image: string;
+  images: string[];
   title: string;
   price:number;
   description: string;
 }
 
 export default function ProductCardComponent({
-  image, title, price, description
+  images, title, price, description
 }:ProductType) {
   const [activeSize, setActiveSize] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
@@ -43,7 +43,7 @@ export default function ProductCardComponent({
         {/* ── Image zone ── */}
         <div className="relative overflow-hidden h-80">
           <Image
-            src={image}
+            src={images[0]}
             className="object-contain drop-shadow-2xl px-8 py-6 transition-transform duration-500 ease-out group-hover/card:scale-105"
             alt="Nike Air Max Pulse"
             width={500}
