@@ -66,10 +66,10 @@ const NavbarComponent = ({
     title: "Shadcnblocks.com",
   },
   menu = [
-    { title: "Home", url: "#" },
+    { title: "Home", url: "/" },
     {
-      title: "Products",
-      url: "#",
+      title: "Product",
+      url: "/products",
       items: [
         {
           title: "Blog",
@@ -99,14 +99,14 @@ const NavbarComponent = ({
       ],
     },
     {
-      title: "Resources",
-      url: "#",
+      title: "Dashboard",
+      url: "/dashboard",
       items: [
         {
           title: "Help Center",
           description: "Get all the answers you need right here",
           icon: <Zap className="size-5 shrink-0" />,
-          url: "#",
+          url: "/dashboard",
         },
         {
           title: "Contact Us",
@@ -138,8 +138,8 @@ const NavbarComponent = ({
     },
   ],
   auth = {
-    login: { title: "Login", url: "#" },
-    signup: { title: "Sign up", url: "#" },
+    login: { title: "Login", url: "/login" },
+    signup: { title: "Sign up", url: "/register" },
   },
   className,
 }: Navbar1Props) => {

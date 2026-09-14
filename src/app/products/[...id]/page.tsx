@@ -22,6 +22,7 @@ export default async function ProductPage({
   const productId = id[0];
 
   if (!productId) {
+    
     return null;
   }
 

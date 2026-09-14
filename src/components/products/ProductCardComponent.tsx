@@ -36,7 +36,6 @@ export default function ProductCardComponent({
   const [activeSize, setActiveSize] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [inBag, setInBag] = useState(false);
-
   return (
     <div className="flex items-center justify-center p-8 w-full bg-background">
       <Card className="w-80 rounded-2xl overflow-hidden p-0! gap-0  group/card">
