@@ -1,5 +1,18 @@
 import ProductCardListComponent from "@/components/products/ProductCardListComponent";
 import type { ProductType } from "@/components/products/ProductCardComponent";
+import { Metadata } from "next";
+
+// static metadata for about page
+export const metadata: Metadata = {
+  title: 'Products',
+  description: "This is product page which list down many products from the website.",
+  keywords: 'Product, Clothes for men, Clothes for women, Clothes for kids, E-Commerce website.',
+  openGraph:{
+     title:'Products',
+     description: 'This is product page which list down many products from the website.',
+     images: ['A1_Thumbnail_project.png']
+  }
+};
 
 async function getProducts(): Promise<ProductType[]> {
   const response = await fetch("https://fakestoreapi.com/products", {
